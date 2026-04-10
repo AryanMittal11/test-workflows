@@ -1,0 +1,23 @@
+name: lint errors
+on:
+  push: 
+    branches: 
+      - main
+  pull_request:
+    branches:
+      -main
+jobs:
+  - name: checking errors
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: install dependencies
+        run: npm ci
+      - name: run lint
+        run: npm run lint
+
