@@ -118,8 +118,7 @@ input,
 textarea,
 select {
   font-family: var(--sans);
-}
-  color: var(--text-h);
+  color: var(--text);
 }
 
 code {
