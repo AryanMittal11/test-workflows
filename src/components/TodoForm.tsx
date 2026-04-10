@@ -26,6 +26,7 @@ export default function TodoForm({
 
   useEffect(() => {
     if (editingTodo) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
       setTitle(editingTodo.title)
       setDescription(editingTodo.description)
       setPriority(editingTodo.priority)

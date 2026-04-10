@@ -28,6 +28,7 @@ function App() {
   useEffect(() => {
     const savedTodos = localStorage.getItem('todos')
     if (savedTodos) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTodos(JSON.parse(savedTodos))
     }
   }, [])
