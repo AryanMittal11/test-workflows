@@ -22,6 +22,7 @@ jobs:
       - name: run lint
         run: npm run lint
   deploy:
+    needs: lint
     name: demo deploy to aws
     runs-on: ubuntu-latest
     steps:
