@@ -1,4 +1,4 @@
-name: lint errors
+name: test workflows
 on:
   push: 
     branches: 
@@ -21,4 +21,21 @@ jobs:
         run: npm ci
       - name: run lint
         run: npm run lint
+  deploy:
+    name: demo deploy to aws
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: install dependencies
+        run: npm ci
+      - name: build project
+        run: npm run build
+      - name: deploy to aws
+        run: echo "Deploying to AWS..."
+     
 
